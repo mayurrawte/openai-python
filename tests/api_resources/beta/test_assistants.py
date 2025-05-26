@@ -29,6 +29,14 @@ class TestAssistants:
         assert_matches_type(Assistant, assistant, path=["response"])
 
     @parametrize
+    def test_method_create_with_mcp_tool(self, client: OpenAI) -> None:
+        assistant = client.beta.assistants.create(
+            model="gpt-4o",
+            tools=[{"type": "mcp", "server_label": "test", "server_url": "https://example.com"}],
+        )
+        assert_matches_type(Assistant, assistant, path=["response"])
+
+    @parametrize
     def test_method_create_with_all_params(self, client: OpenAI) -> None:
         assistant = client.beta.assistants.create(
             model="gpt-4o",
@@ -259,6 +267,14 @@ class TestAsyncAssistants:
     async def test_method_create(self, async_client: AsyncOpenAI) -> None:
         assistant = await async_client.beta.assistants.create(
             model="gpt-4o",
+        )
+        assert_matches_type(Assistant, assistant, path=["response"])
+
+    @parametrize
+    async def test_method_create_with_mcp_tool(self, async_client: AsyncOpenAI) -> None:
+        assistant = await async_client.beta.assistants.create(
+            model="gpt-4o",
+            tools=[{"type": "mcp", "server_label": "test", "server_url": "https://example.com"}],
         )
         assert_matches_type(Assistant, assistant, path=["response"])
 
