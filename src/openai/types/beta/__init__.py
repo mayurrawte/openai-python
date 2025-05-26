@@ -16,6 +16,7 @@ from .thread_update_params import ThreadUpdateParams as ThreadUpdateParams
 from .assistant_list_params import AssistantListParams as AssistantListParams
 from .assistant_tool_choice import AssistantToolChoice as AssistantToolChoice
 from .code_interpreter_tool import CodeInterpreterTool as CodeInterpreterTool
+from .mcp_tool import McpTool as McpTool
 from .assistant_stream_event import AssistantStreamEvent as AssistantStreamEvent
 from .file_search_tool_param import FileSearchToolParam as FileSearchToolParam
 from .assistant_create_params import AssistantCreateParams as AssistantCreateParams
@@ -31,3 +32,4 @@ from .assistant_tool_choice_function_param import AssistantToolChoiceFunctionPar
 from .assistant_response_format_option_param import (
     AssistantResponseFormatOptionParam as AssistantResponseFormatOptionParam,
 )
+from .mcp_tool_param import McpToolParam as McpToolParam
